@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8f6f0"><title>Последний камень — твой?</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body><main class="app">
+<header class="page-header"><h1>Последний камень — твой?</h1><p>Бери 1 или 2 камня. Кто заберёт последний — победит.</p></header>
+<section class="setup" id="setup" aria-label="Настройки партии">
+<div class="stone-setting"><label for="stone-count">Камней</label><div class="number-control"><button id="less" class="stepper" aria-label="На один камень меньше">−</button><input id="stone-count" type="number" min="3" max="30" value="13" inputmode="numeric" aria-describedby="number-note" required><button id="more" class="stepper" aria-label="На один камень больше">+</button></div><span class="field-note" id="number-note">От 3 до 30</span></div>
+<fieldset><legend>Первый ход</legend><div class="segmented"><label><input type="radio" name="first" value="player" checked><span>Ты</span></label><label><input type="radio" name="first" value="computer"><span>Компьютер</span></label></div></fieldset><button id="start" class="button primary">Начать игру</button></section>
+<div class="content"><section class="board" aria-label="Игровое поле">
+<div class="turn-heading"><h2 id="turn-title" aria-live="polite">Готовы начать?</h2><p id="turn-detail">Выбери настройки и начни игру.</p></div>
+<div class="arena">
+<section class="player-zone player" id="player-character" aria-label="Зона игрока"><div class="character-art schoolchild" role="img" aria-label="Школьник сидит рядом с общей кучкой"></div><h3>Ты</h3><p class="zone-status" id="player-status"></p><div class="collected" id="player-collected" aria-label="Собранные игроком камни"></div><p class="collected-caption">Собрано: <strong id="player-total">0</strong></p><div class="speech" id="player-speech" role="status"></div></section>
+<div class="common"><div class="pile-heading"><span>Общая кучка</span><div class="stone-counter">Осталось <strong id="remaining">13</strong><span id="stone-word" class="sr-only">камней на столе</span></div></div><div id="stones" class="stones" aria-label="Камни в общей кучке"></div><div class="move-controls" id="move-controls" hidden><button id="take-one" class="button take">Взять 1</button><button id="take-two" class="button take terra">Взять 2</button></div><p class="playing-note" id="playing-note">Выбери настройки и начни игру.</p></div>
+<section class="player-zone computer" id="computer-character" aria-label="Зона компьютера"><div class="character-art robot" role="img" aria-label="Робот сидит рядом с общей кучкой"></div><h3>Компьютер</h3><p class="last-move" id="computer-last-move" aria-live="polite"></p><p class="zone-status" id="computer-status"></p><div class="collected" id="computer-collected" aria-label="Собранные компьютером камни"></div><p class="collected-caption">Собрано: <strong id="computer-total">0</strong></p><div class="speech" id="computer-speech" role="status"></div></section>
+</div>
+<section class="result" id="result" hidden aria-label="Результат партии"><span id="result-eyebrow" hidden></span><h2 id="result-title" tabindex="-1"></h2><div class="result-actions"><button id="again" class="button primary">Сыграть ещё раз</button><button id="settings" class="button secondary">Изменить настройки</button></div></section></section>
+<aside class="dashboard" aria-label="История и статистика"><section class="history-panel" aria-label="История текущей партии"><div class="section-heading"><h2>Ходы партии</h2><span id="move-count">0 ходов</span></div><ol id="history" tabindex="0" aria-label="Список ходов"><li class="empty-history">Здесь появятся ходы</li></ol></section><section class="stats" aria-label="Статистика"><h2>Результаты</h2><dl class="stat-values"><div><dt>Партий</dt><dd id="played">0</dd></div><div><dt>Твои победы</dt><dd id="won">0</dd></div><div><dt>Победы компьютера</dt><dd id="lost">0</dd></div></dl><button id="reset" class="reset">Сбросить статистику</button></section></aside></div>
+<p class="credit">Адаптация для математического кружка — Ольга Оводова</p>
+</main></body></html>
+
+
+
